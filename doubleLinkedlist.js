@@ -58,6 +58,24 @@ class DoublyLinkedList{
             return value;
         }
 
+
+    }
+
+    removeFromEnd(){
+        if(this.isEmpty()){
+            return null
+        }
+        const value = this.head.value
+        if(this.size === 1){
+            this.head === null
+            this.tail === null
+        }
+        else{
+            this.tail = this.tail.prev
+            this.tail.next = null 
+        }
+        this.size--;
+        return value
     }
 
     print(){
@@ -84,5 +102,5 @@ doubleLink.append(0)
 doubleLink.print()
 doubleLink.append(32)
 doubleLink.print()
-doubleLink.removeFromFront()
+doubleLink.removeFromEnd()
 doubleLink.print()
