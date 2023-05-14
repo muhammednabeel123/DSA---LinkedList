@@ -5,4 +5,4 @@
     return n*f(n-1)
 }
 
-console.log(f(4))
+console.log(f(5))
