@@ -35,6 +35,20 @@ class DoublyLinkedList{
          this.size++
     }
 
+    append(value){
+        const node = new Node(value)
+        if(this.isEmpty()){
+            this.head = node 
+            this.tail = node 
+        }else {
+            this.tail.next = node
+            node.prev = this.tail
+            this.tail = node
+        }
+
+        this.size++
+    }
+
     print(){
         if(this.isEmpty()){
             console.log("this is empty")
@@ -55,7 +69,7 @@ class DoublyLinkedList{
 
 const doubleLink = new  DoublyLinkedList()
 
-doubleLink.prepend(0)
+doubleLink.append(0)
 doubleLink.print()
-doubleLink.prepend(21)
+doubleLink.append(32)
 doubleLink.print()
