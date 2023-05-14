@@ -94,6 +94,21 @@ class DoublyLinkedList{
 
         }
     }
+
+    printReverse(){
+        if(this.isEmpty()){
+            console.log("this is empty")
+        }
+        let curr = this.tail
+        let list = ''
+        while(curr){
+            list += `${curr.value} `
+            curr = curr.prev 
+
+        }
+        console.log(list)
+    }
+
 }
 
 const doubleLink = new  DoublyLinkedList()
@@ -102,5 +117,5 @@ doubleLink.append(0)
 doubleLink.print()
 doubleLink.append(32)
 doubleLink.print()
-doubleLink.removeFromEnd()
-doubleLink.print()
+doubleLink.printReverse()
+
