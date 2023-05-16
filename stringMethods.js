@@ -17,3 +17,8 @@ console.log(text3.endsWith("d"))
 //formCode
 console.log(String.fromCharCode(77))
 
+//localeCompare
+let text4 = "Ab"
+let text5 = "Ab"
+
+console.log(text4.localeCompare(text5))
