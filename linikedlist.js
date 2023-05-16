@@ -110,6 +110,7 @@ removeValue(value){
     }else{
         let prev
         prev = this.head.next
+        console.log('this')
         while(prev.next && prev.next.value != value){
             prev = prev.next
             console.log("hello")
@@ -182,27 +183,38 @@ print(){
 
 
 const list = new LinkedList()
-console.log('list is empty',list.isEmpty() )
-console.log('list size ' ,list.getSize() )
-list.print()
-// list.append(20)
+
+const arr = [1,2,3,4,5]
+
+const length = arr.length
+for(let i=0;i<length;i++){
+    list.append(arr.shift())
+}
+
+list.print();
+
+// console.log('list is empty',list.isEmpty() )
+// console.log('list size ' ,list.getSize() )
 // list.print()
-// list.append(10)
-// list.append(35)
+// // list.append(20)
+// // list.print()
+// // list.append(10)
+// // list.append(35)
+// // list.print()
+// list.insert(10,0)
+
+
+
+// list.insert(30,1)
+
+// list.insert(40,2)
+// list.insert(50,3)
+
+// // console.log(list.removeValue(50)+"heeua")
+
 // list.print()
-list.insert(10,0)
+// list.reverse()
+// list.print()
 
-
-
-list.insert(30,1)
-
-list.insert(40,2)
-list.insert(50,3)
-
-// console.log(list.removeValue(50)+"heeua")
-
-list.print()
-list.reverse()
-list.print()
 
 
