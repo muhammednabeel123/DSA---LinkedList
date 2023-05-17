@@ -20,4 +20,4 @@ function recursiveBinarySearch(arr,target){
 
 
 
-console.log(recursiveBinarySearch([10,20,30,40,50],50));
+        console.log(recursiveBinarySearch([10,20,30,40,50],50));

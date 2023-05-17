@@ -1,172 +1,100 @@
-class Node {
+class Node{
     constructor(value){
-        this.value = value
+        this.value = value 
         this.next = null
+      
     }
 }
 
-class LinkedLists {
+class LinkedList {
     constructor(){
-        this.head= null
         this.size = 0
+        this.head = null
+        this.tail = null
     }
 
     isEmpty(){
         return this.size === 0
-    }
 
-    getSize(){
-        return this.size
     }
 
     prepend(value){
-       const node = new Node(value)
+
+        const node = new Node(value)
         if(this.isEmpty()){
             this.head = node
-            
-        }else{
-            node.next = this.head
-            this.head = node
+            this.tail = node
+        }
+        else{
+        
+            this.head = this.head.next
         }
         this.size++
     }
-    append(value){
-        const node = new Node(value)
-        if(this.isEmpty()){
-            this.head = node
-        }else{
-            
-        }
-
-    }
 
     append(value){
         const node = new Node(value)
-      
         if(this.isEmpty()){
-            this.head= node
+            this.head=node
+            this.tail = node
         }
         else{
-            
-            let curr = this.head
-            while(curr.next){
-            curr = curr.next
-            }
-            curr.next = node
-           
-
+            this.tail.next = node
+            this.tail = node 
         }
-        this.size++;
+        this.size++
+
     }
 
-    insert(value,index){
-        if(index < 0 || index > this.size){
+    removeFromFront(){
+        if(this.isEmpty()){
             return null
         }
-        if(index === 0){
-            this.prepend(value)
-
-        }else{
-          const  node = new Node(value)
-           let prev = this.head
-            for(let i = 0; i<index-1; i++){
-                prev = prev.next
-            }
-            node.next = prev.next
-            prev.next = node
-            this.size++;
-
-
-        }
-    }
-
-    remove(index){
     
-        if(index < 0 || index > this.size ){
-            return null
-
-        }
-
-        if(index === 0){
-             let removedList = this.head
-            this.head = this.head.next
-
-        }
-        else{
-            let removedValue = ' '
-            let prev = this.head
-            for(let i = 0; i<index-1 ; i++){
-                prev = prev.next
-            }
-
-            removedValue = prev.next
-            prev.next  = removedValue.next
-           this.size -- 
-
-        }
-
-
-
-    }
-    removeValue(value){
         
+            const value = this.head.value
+            this.head = this.head.next
+        
+        this.size--
+        return value
+    }
+
+    removeFromEnd(){
         if(this.isEmpty()){
             return null
         }
-        if(this.head.value ===  value ){
-            let removedValue = this.head
-            this.head = this.head.next
-            this.size--
-            return
-
-        }else{
-            let prev = this.head.next
-            
-            while(prev.next && prev.next.value != value){
+        if(this.size === 1){
+            this.head = null
+            this.tail = null
+        }
+        else{
+            let prev = this.head
+            while(prev.next != this.tail){
                 prev = prev.next
-
-                
             }
-            if(prev.next){
-                let removedValue = prev.next
-                prev.next = removedValue.next
-                this.size--
-                return value
-            }
-
-            return null
-
+           prev.next = null
+           this.tail = prev
 
         }
-         
+        this.size --
     }
-
-
 
     print(){
-        if(this.isEmpty()){
-            console.log("this is empty")
-        }else{
-            let curr = this.head
-            let listValue = " "
-
-            while(curr){
-                listValue += `${curr.value} `
-                curr = curr.next 
-            }
-            console.log(listValue,"this ie")
-            
+        console.log("hell");
+        let listValues = ''
+        let curr = this.head
+        while(curr){
+            listValues  +=`${curr.value} `
+            curr = curr.next 
         }
 
+        console.log(listValues)
     }
-
 }
 
-const list = new LinkedLists()
+const list = new LinkedList()
 
-list.append(40)
-list.print()
-list.append(30)
-list.insert(20,2)
-list.removeValue(40)
+list.prepend(20)
+list.append(20)
+list.removeFromEnd()
 list.print()

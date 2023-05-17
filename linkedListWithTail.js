@@ -62,18 +62,18 @@ class LinkedList{
 
     }
 
-    removeFromFront(){
-        if(this.isEmpty()){
-            return null
+        removeFromFront(){
+            if(this.isEmpty()){
+                return null
+            }
+        
+            
+                const value = this.head.value
+                this.head = this.head.next
+            
+            this.size--
+            return value
         }
-    
-        
-            const value = this.head.value
-            this.head = this.head.next
-        
-        this.size--
-        return value
-    }
 
     removeFromEnd(){
         if(this.isEmpty()){
@@ -105,6 +105,7 @@ const list = new LinkedList()
 list.append(1)
 list.append(2)
 list.append(3)
+
 list.prepend(0)
 
 list.print()

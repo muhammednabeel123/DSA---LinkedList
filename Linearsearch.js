@@ -1,10 +1,9 @@
 function linearSearch(arr,target){
   
     for(let i = 0; i < arr.length ; i++ ){
-        console.log(arr[i]);
         if(arr[i] === target){
            
-            return arr[i]
+            return i
        
     }
 

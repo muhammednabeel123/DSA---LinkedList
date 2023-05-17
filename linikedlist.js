@@ -61,10 +61,10 @@ insert(value,index){
         let prev = this.head
         for(let i=0;i<index-1;i++){
             prev = prev.next
-            console.log(prev.next)
+            
         }
         node.next =  prev.next 
-        console.log(node.next)
+      
         prev.next = node
         this.size++;
 
@@ -109,7 +109,7 @@ removeValue(value){
        
     }else{
         let prev
-        prev = this.head.next
+        prev = this.head.   
         console.log('this')
         while(prev.next && prev.next.value != value){
             prev = prev.next
@@ -149,9 +149,9 @@ reverse(){
     let prev = null
     let curr = this.head
     while(curr){
-       let next = curr.next
+        let next = curr.next
         curr.next = prev
-        prev = curr
+        prev = curr 
         curr = next
     }
     this.head = prev
@@ -193,28 +193,34 @@ for(let i=0;i<length;i++){
 
 list.print();
 
-// console.log('list is empty',list.isEmpty() )
-// console.log('list size ' ,list.getSize() )
+console.log('list is empty',list.isEmpty() )
+console.log('list size ' ,list.getSize() )
+list.print()
+// list.append(20)
 // list.print()
-// // list.append(20)
-// // list.print()
-// // list.append(10)
-// // list.append(35)
-// // list.print()
-// list.insert(10,0)
-
-
-
-// list.insert(30,1)
-
-// list.insert(40,2)
-// list.insert(50,3)
-
-// // console.log(list.removeValue(50)+"heeua")
-
+// list.append(10)
+// list.append(35)
 // list.print()
-// list.reverse()
-// list.print()
+list.insert(10,0)
+
+
+
+list.insert(30,1)
+
+list.insert(40,2)
+list.insert(50,3)
+
+let arr3 = [1,2,3,5,6]
+for(let i =0;i<arr.length;i++){
+    list.append(arr.shift())
+}
+
+// console.log(list.removeValue(50)+"heeua")
+
+list.print()
+list.search(30)
+list.reverse()
+list.print()
 
 
 

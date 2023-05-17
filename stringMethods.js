@@ -42,4 +42,11 @@ for(let i = 0;i<text6.length;i++){
 return count;
 }
 
-//splid()
+//split()
+
+let texts = "hello Worlds"
+let myArray = texts.slice(0,5).split().reverse()
+let myArray2 = texts.slice(5,11).split()
+
+
+console.log(myArray)
